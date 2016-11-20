@@ -23,7 +23,7 @@ app.use(mutiUploader({EC: 'base64'}))
 //default buffer
 ```
 
-## method
+## Method
 
 ### body
 
@@ -39,7 +39,7 @@ req.files.FIELDNAME
 
 ### SaveFile
 
-```
+```js
 var mutiUploader = require('express-mutiUploader')
 mutiUploader.saveFile(data, path [, callback])
 
