@@ -40,6 +40,8 @@ req.files.FIELDNAME
 ### SaveFile
 
 ```
+var mutiUploader = require('express-mutiUploader')
+mutiUploader.saveFile(data, path [, callback])
 
 ```
 
