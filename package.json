@@ -2,7 +2,7 @@
   "name": "express-mutiUploader",
   "version": "1.0.0",
   "description": "Simple express mutiple file middleware that warps around connect-busboy",
-  "main": "index.js",
+  "main": "./lib/index.js",
   "repository": {
     "url": "https://github.com/dolphinlin/express-mutiUploader.git",
     "type": "git"
