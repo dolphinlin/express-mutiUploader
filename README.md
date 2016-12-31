@@ -27,13 +27,13 @@ app.use(mutiUploader({EC: 'base64'}))
 
 ### body
 
-```
+```js
 req.body.FIELDNAME
 ```
 
 ### files
 
-```
+```js
 //params: (name, data, dataEC, encoding, mimetype)
 
 req.files.FIELDNAME
