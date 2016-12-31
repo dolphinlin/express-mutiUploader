@@ -20,7 +20,7 @@ app.use(mutiUploader({limits: { fileSize: 50 * 1024 * 1024 }}))
 also u can set the file data encoding
 ```js
 app.use(mutiUploader({EC: 'base64'}))
-//default buffer
+//default encoding >> 'buffer'
 ```
 
 ## Method
@@ -34,14 +34,17 @@ req.body.FIELDNAME
 ### files
 
 ```
+//params: (name, data, dataEC, encoding, mimetype)
+
 req.files.FIELDNAME
+//the files type is fileObj
 ```
 
 ### SaveFile
 
 ```js
 var mutiUploader = require('express-mutiUploader')
-mutiUploader.saveFile(data, path [, callback])
+fileObj.saveFile(path [, callback])
 
 ```
 
@@ -53,9 +56,11 @@ var app = express()
 app.use(mutiUploader())
 
 app.post('/upload', (req, res, next) => {
-  let image = req.files.image
-  mutiUploader.saveFile(image[0], '/test.png', (err) => {
-              console.log(err);
+  let {image} = req.files
+  image[0].saveFile('/test.png', (err, res) => {
+              if (err)
+                console.log(err)
+              console.log(res);
             })
 })
 ```
